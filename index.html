@@ -1,0 +1,26 @@
+<html>
+<head>
+<script type="text/javascript">
+
+function callback() {
+  // Get query params
+  var urlParams = new URLSearchParams(window.location.search.substring(1));
+  const code = urlParams.get('code');
+
+  if (code != null) {
+  
+    // Send the params to Insta kai app
+    var activity = new MozActivity({             
+      name: "instaKaiCallback",
+      data : {
+        code: code
+      }
+    });
+  }  
+}
+</script>
+</head>
+<body onload="callback()">
+  <h2>Redirecting you back to Insta Kai App...</h2>
+</body>
+</html>
